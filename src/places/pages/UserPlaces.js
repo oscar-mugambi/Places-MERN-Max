@@ -12,7 +12,7 @@ const DUMMY_PLACES = [
     address: '20 W 34th St, Nairobi, KE 10001',
     location: {
       lat: -1.2538892,
-      lon: 36.5147118,
+      lng: 36.5147118,
     },
     creatorId: 'u1',
   },
@@ -25,7 +25,7 @@ const DUMMY_PLACES = [
     address: '20 W 34th St, Nairobi, KE 10001',
     location: {
       lat: -1.2538892,
-      lon: 36.5147118,
+      lng: 36.5147118,
     },
     creatorId: 'u2',
   },
