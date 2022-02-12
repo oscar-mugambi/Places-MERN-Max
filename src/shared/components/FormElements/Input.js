@@ -40,7 +40,6 @@ const Input = (props) => {
   }, [id, value, isValid, onInput]);
 
   const changeHandler = (e) => {
-    // @ts-ignore
     dispatch({
       type: 'CHANGE',
       val: e.target.value,
