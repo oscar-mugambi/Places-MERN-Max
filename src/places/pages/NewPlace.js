@@ -69,7 +69,7 @@ const NewPlace = () => {
         id='description'
         element='textarea'
         label='Description'
-        validators={[VALIDATOR_REQUIRE(), VALIDATOR_MINLENGTH(5)]}
+        validators={[VALIDATOR_MINLENGTH(5)]}
         errorText='Please enter a valid description'
         onInput={inputHandler}
       />
