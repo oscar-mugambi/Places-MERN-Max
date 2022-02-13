@@ -1,4 +1,5 @@
 import React, { useCallback, useReducer } from 'react';
+import Button from '../../shared/components/FormElements/Button';
 import Input from '../../shared/components/FormElements/Input';
 import { VALIDATOR_MINLENGTH, VALIDATOR_REQUIRE } from '../../shared/components/util/validators';
 
@@ -72,6 +73,9 @@ const NewPlace = () => {
         errorText='Please enter a valid description'
         onInput={inputHandler}
       />
+      <Button type='submit' disabled={!formState.isValid}>
+        ADD PLACE
+      </Button>
     </form>
   );
 };
