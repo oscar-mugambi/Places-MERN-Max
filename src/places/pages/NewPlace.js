@@ -16,7 +16,13 @@ const formReducer = (state, action) => {
         }
       }
 
-      return {};
+      return {
+        ...state,
+        input: {
+          ...state.inputs,
+          [action.inputId]: { value: action.value, isValid: action.isValid },
+        },
+      };
 
     default:
       return state;
