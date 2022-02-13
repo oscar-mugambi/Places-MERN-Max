@@ -22,6 +22,7 @@ const formReducer = (state, action) => {
           ...state.inputs,
           [action.inputId]: { value: action.value, isValid: action.isValid },
         },
+        isValid: formIsValid,
       };
 
     default:
@@ -30,7 +31,7 @@ const formReducer = (state, action) => {
 };
 
 const NewPlace = () => {
-  const [state, dispatch] = useReducer(formReducer, {
+  const [formState, dispatch] = useReducer(formReducer, {
     inputs: {
       title: {
         value: '',
@@ -44,8 +45,13 @@ const NewPlace = () => {
     isValid: false,
   });
 
-  const titleInputHandler = useCallback((id, value, isValid) => {}, []);
-  const descriptionInputHandler = useCallback((id, value, isValid) => {}, []);
+  const inputHandler = useCallback(
+    (id, value, isValid) => {
+      // @ts-ignore
+      dispatch({ type: 'INPUT_CHANGE', value, isValid, inputId: id });
+    },
+    [dispatch]
+  );
 
   return (
     <form className='place-form'>
@@ -56,7 +62,7 @@ const NewPlace = () => {
         label='Title'
         validators={[VALIDATOR_REQUIRE()]}
         errorText='Please enter a valid title'
-        onInput={titleInputHandler}
+        onInput={inputHandler}
       />
       <Input
         id='description'
@@ -64,7 +70,7 @@ const NewPlace = () => {
         label='Description'
         validators={[VALIDATOR_REQUIRE(), VALIDATOR_MINLENGTH(5)]}
         errorText='Please enter a valid description'
-        onInput={descriptionInputHandler}
+        onInput={inputHandler}
       />
     </form>
   );
