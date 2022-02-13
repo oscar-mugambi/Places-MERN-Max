@@ -48,6 +48,7 @@ const Input = (props) => {
   };
 
   const touchHandler = () => {
+    // @ts-ignore
     dispatch({
       type: 'TOUCH',
     });
