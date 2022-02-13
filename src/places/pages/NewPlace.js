@@ -57,7 +57,7 @@ const NewPlace = () => {
   return (
     <form className='place-form'>
       <Input
-        // id='title'
+        id='title'
         element='input'
         type='text'
         label='Title'
