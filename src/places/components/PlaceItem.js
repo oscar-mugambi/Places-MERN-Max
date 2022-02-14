@@ -31,6 +31,19 @@ const PlaceItem = (props) => {
         </div>
       </Modal>
 
+      <Modal
+        header='Are you sure?'
+        footerClass='place-item__modal-actions'
+        footer={
+          <>
+            <Button inverse>CANCEL</Button>
+            <Button danger>DELETE</Button>
+          </>
+        }
+      >
+        <p>Do you want to proceed and delete this place?</p>
+      </Modal>
+
       <li className='place-item'>
         <Card className='place-item__content'>
           <div className='place-item__image'>
