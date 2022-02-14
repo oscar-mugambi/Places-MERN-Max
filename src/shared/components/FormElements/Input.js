@@ -26,9 +26,9 @@ const inputReducer = (state, action) => {
 
 const Input = (props) => {
   const [inputState, dispatch] = useReducer(inputReducer, {
-    value: '',
-    isValid: false,
+    value: props.initialValue || '',
     isTouched: false,
+    isValid: props.initialValid || false,
   });
 
   const { id, onInput } = props;
@@ -38,11 +38,11 @@ const Input = (props) => {
     onInput(id, value, isValid);
   }, [id, value, isValid, onInput]);
 
-  const changeHandler = (e) => {
+  const changeHandler = (event) => {
     // @ts-ignore
     dispatch({
       type: 'CHANGE',
-      val: e.target.value,
+      val: event.target.value,
       validators: props.validators,
     });
   };
