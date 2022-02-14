@@ -10,7 +10,7 @@ const PlaceList = ({ items }) => {
       <div className='place-list center'>
         <Card>
           <h2>No places found</h2>
-          <button>Share Place</button>
+          <Button to='/places/new'>Share Place</Button>
         </Card>
       </div>
     );
