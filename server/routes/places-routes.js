@@ -1,11 +1,11 @@
 const express = require('express');
 
-const routes = express.Router();
+const route = express.Router();
 
-routes.get('/', (req, res) => {
+route.get('/', (req, res) => {
   res.json({
     message: 'hey',
   });
 });
 
-module.exports = routes;
+module.exports = route;
